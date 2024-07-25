@@ -4,7 +4,7 @@ import com.github_wrapper.task.DTO.response.GithubResponse;
 import com.github_wrapper.task.DTO.response.UserResponse;
 import com.github_wrapper.task.DTO.response.customObject.Branches;
 import com.github_wrapper.task.mappers.UserResponseMapper;
-import com.github_wrapper.task.services.GithubApiClient;
+import com.github_wrapper.task.util.GithubApiClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

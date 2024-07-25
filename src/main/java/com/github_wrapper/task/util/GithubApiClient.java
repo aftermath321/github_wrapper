@@ -1,9 +1,8 @@
-package com.github_wrapper.task.services;
+package com.github_wrapper.task.util;
 
 import com.github_wrapper.task.DTO.response.BranchesResponse;
 import com.github_wrapper.task.DTO.response.GithubResponse;
 import com.github_wrapper.task.DTO.response.customObject.Branches;
-import com.github_wrapper.task.util.CreateRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
