@@ -1,12 +1,8 @@
 package com.github_wrapper.task.DTO.response.customObject;
 
-import lombok.Getter;
-import lombok.Setter;
+public record Commit (
 
-@Getter
-@Setter
-public class Commit {
+        String sha,
+        String url
 
-    String sha;
-    String url;
-}
+){}

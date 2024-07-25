@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: github_wrapper
+
+github:
+  api:
+    token: ${GITHUB_API_TOKEN}
+
+server:
+  port: 8080

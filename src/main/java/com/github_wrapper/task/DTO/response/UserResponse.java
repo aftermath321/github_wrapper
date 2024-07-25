@@ -1,23 +1,13 @@
 package com.github_wrapper.task.DTO.response;
 
+import com.github_wrapper.task.DTO.response.customObject.Branches;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-@AllArgsConstructor
-@ToString
-@Setter
-@Getter
-public class UserResponse {
+public record UserResponse (
 
-    String repoName;
-    String repoOwner;
-    Map<String, String> branches;
+        String repoName,
+        String repoOwner,
+        List<Branches> branches
 
-}
+) {}
