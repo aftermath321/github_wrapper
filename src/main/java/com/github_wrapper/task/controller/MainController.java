@@ -1,6 +1,5 @@
 package com.github_wrapper.task.controller;
 
-import com.github_wrapper.task.DTO.response.GithubResponse;
 import com.github_wrapper.task.DTO.response.UserResponse;
 import com.github_wrapper.task.DTO.response.customObject.Branches;
 import com.github_wrapper.task.mappers.UserResponseMapper;
@@ -30,18 +29,13 @@ public class MainController {
     @GetMapping("/{username}")
     public List<UserResponse> getRepos(@PathVariable String username) {
 
-        List<UserResponse> userResponseList;
-
-        List<GithubResponse> githubResponses = githubApiService.fetchRepos(username);
-
-        userResponseList = githubResponses.stream().map(githubResponse -> {
-            String branches_URL = API_URL + "repos/" + username + "/" + githubResponse.name() + "/branches";
-            List<Branches> branchesList = githubApiService.fetchBranches(branches_URL);
-            return UserResponseMapper.mapToUserResponse(githubResponse, branchesList);
-        }).toList();
-
-        return userResponseList;
-
+        return githubApiService.fetchRepos(username)
+                .stream()
+                .map(githubResponse -> {
+                    String branches_URL = API_URL + "repos/" + username + "/" + githubResponse.name() + "/branches";
+                    List<Branches> branchesList = githubApiService.fetchBranches(branches_URL);
+                    return userResponseMapper.mapToUserResponse(githubResponse, branchesList);
+                }).toList();
 
     }
 }
